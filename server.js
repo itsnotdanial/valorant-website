@@ -14,8 +14,8 @@ let Abilities = [
 ]
 
 
-app.get("/Abilities/:tag", function(request, response) {
-    let tag = request.params.tag
+app.get("/Abilities/", function(request, response) {
+    let tag = request.query.tag
     let Final = []
     for (let Ability of Abilities){
         if(Ability.tags.includes(tag)){
