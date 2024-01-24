@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valorant Agents</title>
+    <link rel="stylesheet" href="styling.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    
+<div>
+    <p> Valorant is a game with four different classes.
+        Each class has a set of unique characters who all have unique abilities. 
+    </p>
+</div>
+
+<div> 
+    <button data-toggle ="collapse"data-target = "#duel"> Duelists </button>
+</div>
+    <div id = "duel">
+        <p> 
+            <form id = "form-duel" >
+                <input id = "in-tag" name = "tag"></input>
+                <button type = "submit"> Search </button> 
+            </form>
+            <div id = duel-container>
+
+            </div>
+        </p>
+    </div>
+</div> 
+
+<div> <button data-toggle ="collapse"data-target = "#init"> Initiators </button> </div>
+<div> <button data-toggle ="collapse"data-target = "#sen"> Sentinels </button> </div>
+<div> <button data-toggle ="collapse"data-target = "#control"> Controllers </button> </div>
+    
+<script src ="fetch-client.js"></script>
+
+</body>
+
+</html>
