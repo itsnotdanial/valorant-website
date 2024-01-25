@@ -19,18 +19,20 @@
 </div>
 
 <div>
-   <button data-toggle ="collapse"data-target = "#duel"> Duelists </button> 
-   <ul>
-        <li> Jett </li>
-        <li> Reyna </li>
-        <li> Raze </li>
-        <li> Neon </li>
-   </ul>
+   <button data-toggle ="collapse"data-target = "#duel" class = "btn btn-lg "> Duelists </button> 
+   <div id = "duel" class = "collapse mt-3"> 
+        <ul>
+            <li> Jett </li>
+            <li> Reyna </li>
+            <li> Raze </li>
+            <li> Neon </li>
+        </ul>
+   </div>
 </div>
 
 
 <div> 
-    <button data-toggle ="collapse"data-target = "#init" aria-expanded="true"> Initiators </button>
+    <button data-toggle ="collapse"data-target = "#init" class = "btn btn-lg"> Initiators </button>
     <div id = "init" class = "collapse mt-3">
         <ul>
                 <li> Sova </li>
@@ -40,8 +42,9 @@
         </ul>
     </div>
  </div>
-<div> 
-    <button data-toggle ="collapse"data-target = "#sen" class = "button SenButton"> Sentinels </button>
+
+ <div> 
+    <button data-toggle ="collapse"data-target = "#sen" class = "btn btn-lg "> Sentinels </button>
     <div id = "sen" class = "collapse mt-3">
         <ul> 
                 <li> Killjoy </li>
@@ -51,9 +54,10 @@
         </ul>
     </div>
  </div>
-<div> 
-    <button data-toggle ="collapse"data-target = "#control"> Controllers </button>
-    <div id = "control" class = "collapse mt-3"></div>
+
+ <div> 
+    <button data-toggle ="collapse"data-target = "#control" class = "btn btn-lg "> Controllers </button>
+    <div id = "control" class = "collapse mt-3">
         <ul> 
             <li> Omen </li>
             <li> Astra </li>
@@ -64,20 +68,31 @@
     </div> 
 </div>
 
-<div id = "duel">
-    <p> 
-        <form id = "form-duel" >
-            <input id = "in-tag" name = "tag"></input>
-            <button type = "submit"> Search </button> 
-        </form>
-    </p>    
 
-    </div>
+
+<div> 
+     
+        <button data-toggle ="collapse"data-target = "#searching" class = "btn btn-lg "> Ability Search </button>
+
+        <div id = "searching" class = "collapse mt-3">
+    
+            <p> 
+                <form id = "form-duel" >
+                    <input id = "in-tag" name = "tag"></input>
+                    <button type = "submit"> Search </button> 
+                </form>
+            </p>
+
+            <div id = "duel-container"></div>
+
+             
+        
+        </div>       
+
+    
 </div> 
 
-<div id = "duel-container">
 
-</div>
     
 <script src ="fetch-client.js"></script>
 
