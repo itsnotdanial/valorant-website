@@ -1,6 +1,6 @@
-let DuelVar = document.getElementById("form-duel");
+let con = document.getElementById("form-duel");
 
-DuelVar.addEventListener('submit', async function(event){
+con.addEventListener('submit', async function(event){
   event.preventDefault();
   try{
     let tag = document.getElementById("in-tag").value;
@@ -17,5 +17,3 @@ DuelVar.addEventListener('submit', async function(event){
   alert(e)
   }
 })
-
-

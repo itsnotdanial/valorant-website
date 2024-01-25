@@ -3,6 +3,7 @@ const app = express()
 
 app.use(express.static('client'))
 
+//I HAVE NO IDEA WHY I NEED THIS
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
@@ -13,7 +14,7 @@ app.use(function (req, res, next) {
 
 //Defining abilties for agents and their class
 let Abilities = [ 
-    {"text" : "Smoke, Updraft, Dash, Knives", "tags" : ["Jett", "Duelist"]},
+    {"text" : "Smoke, Updraft, Dash, Knives", "tags" : ["Reyna", "Duelist"]},
     {"text" : "Flash, Molitov, Wall, SecondLife", "tags" : ["Phoenix", "Duelist"]},
     {"text" : "Smoke, Flash, Step, Teleport", "tags" : ["Omen", "Controller"]},
     {"text" : "Suck, Stun, Smoke, Nebula", "tags" : ["Astra", "Controller"]},
