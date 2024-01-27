@@ -3,6 +3,10 @@ const app = express()
 
 app.use(express.static('client'))
 
+app.use(express.json())
+
+const fs = require('fs')
+
 //I HAVE NO IDEA WHY I NEED THIS
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -10,28 +14,32 @@ app.use(function (req, res, next) {
     next();
   });
 
+const DataPath = 'data/data.json'
 
+const Abilities = JSON.parse(fs.readFileSync(DataPath));
 
-//Defining abilties for agents and their class
-let Abilities = [ 
-    {"text" : "Smoke, Updraft, Dash, Knives", "tags" : ["Reyna", "Duelist"]},
-    {"text" : "Flash, Molitov, Wall, SecondLife", "tags" : ["Phoenix", "Duelist"]},
-    {"text" : "Smoke, Flash, Step, Teleport", "tags" : ["Omen", "Controller"]},
-    {"text" : "Suck, Stun, Smoke, Nebula", "tags" : ["Astra", "Controller"]},
-    {"text" : "Cage, Trip, Camera, Reveal", "tags" : ["Cypher", "Sentinel"]},
-    {"text" : "Recon, ShockDart, Drone, Hunter", "tags" : ["Sova", "Initiator"]}
-]
 
 
 app.get("/Abilities/", function(request, response) {
-    let tag = request.query.tag
+    let Name = request.query.Name
     let Final = []
     for (let Ability of Abilities){
-        if(Ability.tags.includes(tag)){
+        if(Ability.Names.includes(Name)){
             Final.push(Ability.text)   
         }
     }
     response.send(Final)
+})
+
+app.post("/newdata", function(request, response){
+    const payload = request.body 
+    console.log(payload)
+    const sentName = request.body['sub-class'];
+    const sentClass = request.body['sub-class'];
+    const sentAbility = request.body['sub-ability'];
+
+     const sentData = { text: sentAbility, Abilities: [sentName, sentClass] };
+
 })
 
 

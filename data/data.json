@@ -1,0 +1,8 @@
+ [ 
+    {"text" : "Dash", "Names" : ["Jett", "Duelist"]},
+    {"text" : "Molitov", "Names" : ["Phoenix", "Duelist"]},
+    {"text" : "DarkCover", "Names" : ["Omen", "Controller"]},
+    {"text" : "Nebula", "Names" : ["Astra", "Controller"]},
+    {"text" : "Camera", "Names" : ["Cypher", "Sentinel"]},
+    {"text" : "Recon", "Names" : ["Sova", "Initiator"]}
+]

@@ -1,9 +1,34 @@
 .btn {
-    width : 150px;
-    height : 50px;
+    width : 400px;
+    height : 75px;
+    color : white;
+    
+}
+
+body {
     color : white
 }
 
-.bod {
-    background-color: #192149;
+p{
+    color : white;
+}
+
+li {
+    color : white
+}
+
+#container{
+    color: white;
+}
+
+#form-name{
+    color: white;
+}
+
+#submit {
+    color :black;
+}
+
+#sub-name, #sub-ability, #sub-class{
+    color: black;
 }
