@@ -38,21 +38,23 @@ app.get("/Abilities/", function(request, response) {
   //  try  
 
 //})
-/*
-app.get("/load/", function(request, response){
-    const extractedAbilities = [];
 
-FileData.forEach(item => {
-  item.Abilities.forEach(ability => {
-    if (ability !== "Duelist") {
-      extractedAbilities.push(ability);
+app.get("/load/", function(request, response){
+  let clickedID = request.query.clickedID
+  console.log(clickedID)
+  const extractedAbilities = [];
+
+  for (let DataSet of Abilities) {
+    if(DataSet.Abilities.includes(clickedID)){
+      extractedAbilities.push(DataSet.Abilities[0])
+      console.log(extractedAbilities)
     }
-  });
-});
+  }
+  response.send(extractedAbilities)
 
 // Now extractedAbilities is an array of individual abilities associated with "Duelist"
 console.log(extractedAbilities);
-})*/
+})
 
 
 //need to add error handling?

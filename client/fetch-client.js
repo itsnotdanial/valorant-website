@@ -5,7 +5,7 @@ let con = document.getElementById("form-duel");
 //const buttonGroup = document.getElementById("buttonGroup");
 //const info = document.getElementById("info");
 
-/*
+
 const buttonGroupPressed = async(e) => { 
   
   const isButton = e.target.nodeName === 'BUTTON';
@@ -16,9 +16,9 @@ const buttonGroupPressed = async(e) => {
   let clickedID = e.target.id
   console.log(e.target.id);
   try {
-    const response = await fetch('http://127.0.0.1:6969/load')
+    const response = await fetch('http://127.0.0.1:6969/load?clickedID='+ clickedID)
     if(response.ok){
-      let texts = await response.text 
+      let texts = await response.text();
       document.getElementById(clickedID+"con").innerHTML = texts 
     }else{
       alert("Error 404, check your connection")
@@ -29,7 +29,7 @@ const buttonGroupPressed = async(e) => {
     }
 }
 buttonGroup.addEventListener("click", buttonGroupPressed);
-*/
+
 
 
 //not finished supposed to be for the return all
