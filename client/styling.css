@@ -29,10 +29,8 @@ li {
     color: white;
 }
 
-#submit {
-    color :black;
-}
 
-#sub-name, #sub-ability, #sub-class{
+
+#sub-name, #sub-ability, #sub-class #submit{
     color: black;
 }
