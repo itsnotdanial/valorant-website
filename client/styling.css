@@ -2,6 +2,7 @@
     width : 400px;
     height : 75px;
     color : white;
+    text-align: left;
     
 }
 
@@ -14,11 +15,14 @@ p{
 }
 
 li {
+    text-align: left;
     color : white
+    
 }
-
-#container{
-    color: white;
+/* fix alignment */
+#container, #Controllercon, #Duelcon, #Sentinelcon,
+#duel, #init, #sen, #control, #searching, #submitting {
+    text-align: left;
 }
 
 #form-name{

@@ -28,6 +28,6 @@ form.addEventListener("submit", async (event) => {
   }
 }
 catch(error) {
-  document.getElementById("text-box").innerHTML = "Sorry your submission was unsuccessful, perhaps you tried to enter a duplicate"
+  document.getElementById("text-box").innerHTML = "Sorry your submission was unsuccessful. You have an error 404 please check your connection"
 }
 });

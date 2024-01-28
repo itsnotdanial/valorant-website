@@ -1,3 +1,5 @@
+//const { error } = require("console");
+
 let con = document.getElementById("form-duel");
 //let all = document.getElementById("AllButton")
 
@@ -5,7 +7,11 @@ let con = document.getElementById("form-duel");
 //const buttonGroup = document.getElementById("buttonGroup");
 //const info = document.getElementById("info");
 
-
+//JavaScript to find out which button is pressed
+// From the options Duelist, Sentinels, Initiators, Controllers
+//When a button is pressed the ID of that button is sent to the server
+//The server then returns data which is then turned in bullet-points
+//It is then returned to the neccessary container
 const buttonGroupPressed = async(e) => { 
   
   const isButton = e.target.nodeName === 'BUTTON';
@@ -18,14 +24,20 @@ const buttonGroupPressed = async(e) => {
   try {
     const response = await fetch('http://127.0.0.1:6969/load?clickedID='+ clickedID)
     if(response.ok){
-      let texts = await response.text();
-      document.getElementById(clickedID+"con").innerHTML = texts 
+      let placeholder = await response.json()
+      //let texts = await response.text();
+      let html = "<ul>\n";
+      for(let place of placeholder){
+        html += `<li>${place}</li>\n`;
+      }
+      html += "</ul>\n";
+      document.getElementById(clickedID+"con").innerHTML = html 
     }else{
       alert("Error 404, check your connection")
     }
     }
-    catch(error){
-      alert(error)
+    catch(e){
+      alert(e)
     }
 }
 buttonGroup.addEventListener("click", buttonGroupPressed);
@@ -55,13 +67,21 @@ con.addEventListener('submit', async function(event){
     alert('http://127.0.0.1:6969/Abilities?Name='+Name)
     let response = await fetch('http://127.0.0.1:6969/Abilities?Name='+Name);
     if (response.ok) {
-      let txt = await response.text() ;
-      console.log(txt)
-      document.getElementById("container").innerHTML=txt;
+      //let txt = await response.text() ;
+      //console.log(txt)
+      let AbilityReturned = await response.json()
+      //let texts = await response.text();
+      let html = "<ul>\n";
+      for(let temp of AbilityReturned){
+        html += `<li>${temp}</li>\n`;
+      }
+      html += "</ul>\n";
+      document.getElementById("container").innerHTML = html 
+      
     }else{
-          alert("Error 4045555")
+          alert(error)
     }
   } catch(e) {
-  console.log("Sorry you have an error")
+  alert("Sorry you have an error 404, please check your connection")
   }
 })
