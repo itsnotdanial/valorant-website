@@ -11,7 +11,7 @@ const fs = require('fs')
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    next();
+    next();
   });
 
 const DataPath = 'data/data.json'
@@ -21,24 +21,59 @@ const Abilities = JSON.parse(fs.readFileSync(DataPath));
 
 
 app.get("/Abilities/", function(request, response) {
-    let Name = request.query.Name
-    let Final = []
-    for (let Ability of Abilities){
-        if(Ability.Names.includes(Name)){
+    
+        let Name = request.query.Name
+        let Final = []
+        for (let Ability of Abilities){
+            if(Ability.Abilities.includes(Name)){
             Final.push(Ability.text)   
+            }
         }
+ 
+        response.send(Final)
+    })
+
+//get method to return everything 
+//app.get("/everything/", function(request, response){
+  //  try  
+
+//})
+/*
+app.get("/load/", function(request, response){
+    const extractedAbilities = [];
+
+FileData.forEach(item => {
+  item.Abilities.forEach(ability => {
+    if (ability !== "Duelist") {
+      extractedAbilities.push(ability);
     }
-    response.send(Final)
-})
+  });
+});
 
+// Now extractedAbilities is an array of individual abilities associated with "Duelist"
+console.log(extractedAbilities);
+})*/
+
+
+//need to add error handling?
 app.post("/newdata", function(request, response){
-    const payload = request.body 
-    console.log(payload)
-    const sentName = request.body['sub-class'];
-    const sentClass = request.body['sub-class'];
-    const sentAbility = request.body['sub-ability'];
+    try { const payload = request.body 
+        console.log(payload)
 
-     const sentData = { text: sentAbility, Abilities: [sentName, sentClass] };
+        const sentName = request.body['sub-name'];
+        const sentClass = request.body['sub-class'];
+        const sentAbility = request.body['sub-ability'];
+        
+        const sentData = { text: sentAbility, Abilities: [sentName, sentClass] };
+        Abilities.push(sentData)
+        fs.writeFileSync(DataPath, JSON.stringify(Abilities));
+
+        
+        response.json({ success: true, data: sentData });
+    } catch(erorr) {
+        console.erorr(error)
+            response.status(500).json({ success: false, error: "Internal Server Error" });
+    }
 
 })
 

@@ -17,10 +17,11 @@
             Each class has a set of unique characters who all have unique abilities. 
         </p>
     </div>
-
+ <!-- make it so the agents list is updated when the button is pressed -->
+ <div id = "buttonGroup">
     <div>
-    <button data-toggle ="collapse"data-target = "#duel" class = "btn btn-primary btn-lg"> Duelists </button> 
-    <div id = "duel" class = "collapse mt-3"> 
+        <button id = "Duelist" data-toggle="collapse"data-target = "#duel" class = "btn btn-primary btn-lg"> Duelists </button> 
+        <div id = "duel" class = "collapse mt-3"> 
             <ul>
                 <li> Jett </li>
                 <li> Reyna </li>
@@ -32,7 +33,7 @@
 
 
     <div> 
-        <button data-toggle ="collapse"data-target = "#init" class = "btn btn-primary btn-lg"> Initiators </button>
+        <button id = "Initiator" data-toggle ="collapse"data-target = "#init" class = "btn btn-primary btn-lg"> Initiators </button>
         <div id = "init" class = "collapse mt-3">
                 <ul>
                     <li> Sova </li>
@@ -44,7 +45,7 @@
     </div>
 
     <div> 
-        <button data-toggle ="collapse"data-target = "#sen" class = "btn btn-primary btn-lg"> Sentinels </button>
+        <button id = "Sentinel" data-toggle ="collapse"data-target = "#sen" class = "btn btn-primary btn-lg"> Sentinels </button>
         <div id = "sen" class = "collapse mt-3">
                 <ul> 
                     <li> Killjoy </li>
@@ -56,7 +57,7 @@
     </div>
 
     <div> 
-        <button data-toggle ="collapse"data-target = "#control" class = "btn btn-primary btn-lg"> Controllers </button>
+        <button id = "Controller" data-toggle ="collapse"data-target = "#control" class = "btn btn-primary btn-lg"> Controllers </button>
         <div id = "control" class = "collapse mt-3">
                 <ul> 
                     <li> Omen </li>
@@ -67,7 +68,7 @@
 
         </div> 
     </div>
-
+</div>
 
 
     <div> 
@@ -103,9 +104,9 @@
             <p> 
                 <form id = "form-name" >
                      
-                    Name <input id = "sub-name"></input>
-                    Ability <input id = "sub-ability"></input>
-                    Class <select id = "sub-class"> 
+                    Name <input id = "sub-name" name = "sub-name" ></input>
+                    Ability <input id = "sub-ability" name = "sub-ability"></input>
+                    Class <select id = "sub-class" name = "sub-class" > 
                         <option value="Duelist"> Duelist </option> 
                         <option value="Sentinel"> Sentinel </option>
                         <option value="Initiator"> Initiator </option>
@@ -113,6 +114,7 @@
                     </select>
                     <button id = "submit" type = "submit"> Submit </button> 
                 </form>
+                <div><p id = "text-box"></p></div>
                 
             </p>
 
