@@ -28,9 +28,27 @@ describe('Test the things service', () => {
       .expect(200)
   })
 
-  test('GET /thing/1 returns JSON', () => {
+  test('GET /load returns JSON', () => {
     return request(app)
-      .get('/thing/1')
+      .get('/load?clickedID=Duelist')
+      .expect('Content-type', /json/)
+  })
+
+  test('GET /load returns JSON', () => {
+    return request(app)
+      .get('/load?clickedID=Initiator')
+      .expect('Content-type', /json/)
+  })
+
+  test('GET /load returns JSON', () => {
+    return request(app)
+      .get('/load?clickedID=Controller')
+      .expect('Content-type', /json/)
+  })
+
+  test('GET /load returns JSON', () => {
+    return request(app)
+      .get('/load?clickedID=Sentinel')
       .expect('Content-type', /json/)
   })
 
