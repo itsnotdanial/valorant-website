@@ -22,6 +22,24 @@ describe('Test the things service', () => {
       .expect(/Dash/)
   })
 
+  test('GET /Abilities includes Dash', () => {
+    return request(app)
+      .get('/Abilities?Name=Fade')
+      .expect(/Eye/)
+  })
+
+  test('GET /Abilities includes Turret', () => {
+    return request(app)
+      .get('/Abilities?Name=Killjoy')
+      .expect(/Turret/)
+  })
+
+  test('GET /Abilities includes DarkCover', () => {
+    return request(app)
+      .get('/Abilities?Name=Omen')
+      .expect(/DarkCover/)
+  })
+
   test('GET /load succeeds', () => {
     return request(app)
       .get('/load')

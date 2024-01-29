@@ -1,9 +1,10 @@
 .btn {
-    width : 400px;
+    width : 200px;
     height : 75px;
-    text-align: left;
-    
+    color: white;
+    margin-top: 25px;   
 }
+
 
 body {
     color : white
@@ -18,12 +19,13 @@ li {
     color : white
     
 }
-/* fix alignment */
+
 #Controllercon, #Duelcon, #Sentinelcon,
-#duel, #init, #sen, #control, #searching{
+#duel, #init, #sen, #control{
     text-align: left;
     margin: 0%;
     padding: 0%;
+    color : white
 }
 
 #form-name, #container{
@@ -36,6 +38,9 @@ li {
 
 #intro{
     text-align: justify;
-    font: 100px;
+    font-size: 20px;
     font-family: sans-serif;  
 }
+
+
+
