@@ -63,7 +63,6 @@ con.addEventListener('submit', async function (event) {
   event.preventDefault()
   try {
     const Name = document.getElementById('in-Name').value
-    alert('http://127.0.0.1:6969/Abilities?Name=' + Name)
     const response = await fetch('http://127.0.0.1:6969/Abilities?Name=' + Name)
     if (response.ok) {
       const AbilityReturned = await response.json()
@@ -71,16 +70,17 @@ con.addEventListener('submit', async function (event) {
       for (const temp of AbilityReturned) {
         html += `<li>${temp}</li>\n`
       }
+      if (html === '<ul>\n') {
+        const NewTemp = 'This item does not exist. Try adding it with the New Agent button.'
+        html += `<li>${NewTemp}</li>\n`
+      }
       html += '</ul>\n'
       console.log(html)
-      if (html === '<ul>\n</ul>\n') {
-        html = 'Sorry this item does not exist, you can add it with the new agent button'
-      }
       document.getElementById('container').innerHTML = html
     } else {
-      alert('Sorry your connection has been lost')
+      alert('Error 404, sorry your connection has been lost')
     }
   } catch (e) {
-    alert('Sorry you have an error 404, please check your connection')
+    alert('Error 404, sorry your connection has been lost')
   }
 })

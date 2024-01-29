@@ -6,9 +6,7 @@ const form = document.getElementById('form-name')
 form.addEventListener('submit', async (event) => {
   try {
     event.preventDefault()
-    console.log(form)
     const formData = new FormData(form)
-    console.log(formData)
 
     const payload = JSON.stringify(Object.fromEntries(formData.entries()))
     console.log(payload)
@@ -24,9 +22,17 @@ form.addEventListener('submit', async (event) => {
     })
     console.log(await response.json())
     if (response.ok) {
-      document.getElementById('text-box').innerHTML = 'Your submission was successful!'
+      let SucMsg = '<ul>\n'
+      const newTxtSuc = 'Your submission was successful'
+      SucMsg += `<li>${newTxtSuc}</li>\n`
+      SucMsg += '<ul>\n'
+      document.getElementById('text-box').innerHTML = SucMsg
     }
   } catch (error) {
-    document.getElementById('text-box').innerHTML = 'Sorry your submission was unsuccessful. You have an error 404 please check your connection'
+    let errorMsg = '<ul>\n'
+    const newTxt = 'Sorry, your submission was unsuccessful. You have an error 404, please check your connection'
+    errorMsg += `<li>${newTxt}</li>\n`
+    errorMsg += '</ul>\n'
+    document.getElementById('text-box').innerHTML = errorMsg
   }
 })

@@ -1,7 +1,6 @@
 .btn {
     width : 400px;
     height : 75px;
-    color : white;
     text-align: left;
     
 }
@@ -20,17 +19,23 @@ li {
     
 }
 /* fix alignment */
-#container, #Controllercon, #Duelcon, #Sentinelcon,
-#duel, #init, #sen, #control, #searching, #submitting {
+#Controllercon, #Duelcon, #Sentinelcon,
+#duel, #init, #sen, #control, #searching{
     text-align: left;
+    margin: 0%;
+    padding: 0%;
 }
 
-#form-name{
+#form-name, #container{
     color: white;
 }
 
-
-
-#sub-name, #sub-ability, #sub-class #submit{
+#sub-name, #sub-ability, #sub-class, #submit{
     color: black;
+}
+
+#intro{
+    text-align: justify;
+    font: 100px;
+    font-family: sans-serif;  
 }
