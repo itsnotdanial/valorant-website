@@ -1,9 +1,10 @@
 .btn {
-    width : 400px;
+    width : 200px;
     height : 75px;
-    color : white;
-    
+    color: white;
+    margin-top: 25px;   
 }
+
 
 body {
     color : white
@@ -14,21 +15,32 @@ p{
 }
 
 li {
+    text-align: left;
+    color : white
+    
+}
+
+#Controllercon, #Duelcon, #Sentinelcon,
+#duel, #init, #sen, #control{
+    text-align: left;
+    margin: 0%;
+    padding: 0%;
     color : white
 }
 
-#container{
+#form-name, #container{
     color: white;
 }
 
-#form-name{
-    color: white;
-}
-
-#submit {
-    color :black;
-}
-
-#sub-name, #sub-ability, #sub-class{
+#sub-name, #sub-ability, #sub-class, #submit{
     color: black;
 }
+
+#intro{
+    text-align: justify;
+    font-size: 20px;
+    font-family: sans-serif;  
+}
+
+
+

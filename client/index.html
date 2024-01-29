@@ -8,128 +8,92 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
 </head>
-<body style = "background-color: #1c2e4a;">
-    
-    <div>
-        <p> Valorant is a game with four different classes.
-            Each class has a set of unique characters who all have unique abilities. 
-        </p>
-    </div>
-
-    <div>
-    <button data-toggle ="collapse"data-target = "#duel" class = "btn btn-primary btn-lg"> Duelists </button> 
-    <div id = "duel" class = "collapse mt-3"> 
-            <ul>
-                <li> Jett </li>
-                <li> Reyna </li>
-                <li> Raze </li>
-                <li> Neon </li>
-            </ul>
-        </div>
-    </div>
-
-
-    <div> 
-        <button data-toggle ="collapse"data-target = "#init" class = "btn btn-primary btn-lg"> Initiators </button>
-        <div id = "init" class = "collapse mt-3">
-                <ul>
-                    <li> Sova </li>
-                    <li> Fade </li>
-                    <li> Skye </li>
-                    <li> Gekko </li>
-            </ul>
-        </div>
-    </div>
-
-    <div> 
-        <button data-toggle ="collapse"data-target = "#sen" class = "btn btn-primary btn-lg"> Sentinels </button>
-        <div id = "sen" class = "collapse mt-3">
-                <ul> 
-                    <li> Killjoy </li>
-                    <li> Deadlock </li>
-                    <li> Cypher </li>
-                    <li> Sage </li>
-                </ul>
-        </div>
-    </div>
-
-    <div> 
-        <button data-toggle ="collapse"data-target = "#control" class = "btn btn-primary btn-lg"> Controllers </button>
-        <div id = "control" class = "collapse mt-3">
-                <ul> 
-                    <li> Omen </li>
-                    <li> Astra </li>
-                    <li> Viper </li>
-                    <li> Brimstone </li>
-                </ul>
-
-        </div> 
-    </div>
-
-
-
-    <div> 
-     
-            <button data-toggle ="collapse"data-target = "#searching" class = "btn btn-primary btn-lg"> Ability Search </button>
-
-            <div id = "searching" class = "collapse mt-3">
-    
-                <p> 
-                    <form id = "form-duel" >
-                        <input id = "in-Name" name = "Name"></input>
-                        <button type = "submit"> Search </button> 
-                    </form>
+<body style="background-color: #1c2e4a;">
+<!-- Grid system taken from here https://getbootstrap.com/docs/4.1/layout/grid/ -->
+<!-- Collapse taken from here https://getbootstrap.com/docs/4.3/components/collapse/-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p id = "intro">Valorant is a game with four different classes,
+                    Duelists, Initiators, Controllers, and Sentinels.
+                    Each class has a set of unique characters who all have unique abilities.
                 </p>
+            </div>
+        </div>
 
-            <div id = "container"></div>
+        <div id="buttonGroup" class="row">
+            <div class="col-md-3">
+                <button id="Duelist" data-toggle="collapse" data-target="#duel" class="btn btn-primary btn-lg">Duelist</button>
+                <div id="duel" class="collapse mt-3">
+                    <div id="Duelistcon"></div>
+                </div>
+            </div>
 
-             
-        
-            </div>       
+            <div class="col-md-3">
+                <button id="Initiator" data-toggle="collapse" data-target="#init" class="btn btn-primary btn-lg">Initiator</button>
+                <div id="init" class="collapse mt-3">
+                    <div id="Initiatorcon"></div>
+                </div>
+            </div>
 
-    
-    </div> 
+            <div class="col-md-3">
+                <button id="Sentinel" data-toggle="collapse" data-target="#sen" class="btn btn-primary btn-lg">Sentinel</button>
+                <div id="sen" class="collapse mt-3">
+                    <div id="Sentinelcon"></div>
+                </div>
+            </div>
 
-    <div id = "container"></div>
+            <div class="col-md-3">
+                <button id="Controller" data-toggle="collapse" data-target="#control" class="btn btn-primary btn-lg">Controller</button>
+                <div id="control" class="collapse mt-3">
+                    <div id="Controllercon"></div>
+                </div>
+            </div>
+        </div>
 
-    <div> 
-     
-        <button data-toggle ="collapse"data-target = "#submitting" class = "btn btn-primary btn-lg"> New agent </button>
+        <div class="row">
+            <div class="col-md-12">
+                <button data-toggle="collapse" data-target="#searching" class="btn btn-primary btn-lg">Ability Search</button>
+                <div id="searching" class="collapse mt-3">
+                    <p>
+                        <form id="form-duel">
+                            <input id="in-Name" name="Name">
+                            <button type="submit">Search</button>
+                        </form>
+                    
+                    <div id="container"></div>
+                </div>
+            </div>
+        </div>
 
-        <div id = "submitting" class = "collapse mt-3">
+        <div class="row">
+            <div class="col-md-12">
+                <button data-toggle="collapse" data-target="#submitting" class="btn btn-primary btn-lg">New Agent</button>
+                <div id="submitting" class="collapse mt-3">
+                    <p>
+                        <form id="form-name">
+                            Name <input id="sub-name" name="sub-name">
+                            Ability <input id="sub-ability" name="sub-ability">
+                            Class
+                            <select id="sub-class" name="sub-class">
+                                <option value="Duelist">Duelist</option>
+                                <option value="Sentinel">Sentinel</option>
+                                <option value="Initiator">Initiator</option>
+                                <option value="Controller">Controller</option>
+                            </select>
+                            <button id="submit" type="submit">Submit</button>
+                        </form>
+                        <div id='text-box'></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            <p> 
-                <form id = "form-name" >
-                     
-                    Name <input id = "sub-name"></input>
-                    Ability <input id = "sub-ability"></input>
-                    Class <select id = "sub-class"> 
-                        <option value="Duelist"> Duelist </option> 
-                        <option value="Sentinel"> Sentinel </option>
-                        <option value="Initiator"> Initiator </option>
-                        <option value="Controller"> Controller </option>
-                    </select>
-                    <button id = "submit" type = "submit"> Submit </button> 
-                </form>
-                
-            </p>
-
-       
-
-         
-    
-        </div>       
-
-
-</div>
-
-
- <div>    
-    <script src ="fetch-client.js"></script>
-    <script src = "fetch-server.js"></script>
-</div>
+    <div>
+        <script src="fetch-client.js"></script>
+        <script src="fetch-server.js"></script>
+    </div>
 
 </body>
 </html>
