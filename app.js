@@ -1,4 +1,3 @@
-const { error } = require('console')
 const express = require('express')
 const app = express()
 
@@ -30,12 +29,6 @@ app.get('/Abilities/', function (request, response) {
   response.send(Final)
 })
 
-// get method to return everything
-// app.get("/everything/", function(request, response){
-//  try
-
-// })
-
 app.get('/load/', function (request, response) {
   const clickedID = request.query.clickedID
   const extractedAbilities = []
@@ -48,7 +41,7 @@ app.get('/load/', function (request, response) {
   response.send(extractedAbilities)
 })
 
-// need to add error handling?
+// Post method
 app.post('/newdata', function (request, response) {
   try {
     const payload = request.body
@@ -63,9 +56,8 @@ app.post('/newdata', function (request, response) {
     fs.writeFileSync(DataPath, JSON.stringify(Abilities))
 
     response.json({ success: true, data: sentData })
-  } catch (erorr) {
-    alert(error)
-    response.status(500).json({ success: false, error: 'Internal Server Error' })
+  } catch (e) {
+    alert(e)
   }
 })
 
